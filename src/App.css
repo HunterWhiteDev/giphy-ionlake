@@ -1,38 +1,173 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: rgb(41, 41, 41);
+  height: 100vh;
   color: white;
+  font-size: 48px;
+  overflow-y: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.app__title {
+  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app__title > img {
+  width: 65px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+
+.app__searchWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.app__searchWrapper > span {
+  margin-bottom: 10px;
+}
+
+.app__searchInput {
+  color: white !important;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 1rem;
+  width: 500px;
+  margin-right: 10px;
+}
+
+.app__searchInput > .MuiSvgIcon-root {
+  margin-right: 5px;
+}
+
+.app__searchInput > input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  width: 15rem;
+  font-size: 24px;
+  width: 125%;
+}
+
+.app__searchTypeSelector {
+  color: white;
+  width: 100px;
+}
+
+.MuiFormControl-root {
+  width: 150px !important;
+  color: white !important;
+}
+
+.MuiFormLabel-root,
+.MuiInputBase-root,
+.MuiInputBase-root > .MuiSvgIcon-root,
+.MuiOutlinedInput-notchedOutline {
+  color: white !important;
+  border-color: white !important;
+}
+
+.MuiPaper-root {
+  background-color: rgb(41, 41, 41) !important;
+
+  color: white !important;
+  box-shadow: white;
+  box-shadow: 0px 2.5px 2.5px -3px white, 0px 0.5px 2px 1px white,
+    0px 3px 2.5px 2px white;
+}
+
+.app__searchTypeSelector {
+  display: flex;
+  width: 500px;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.app__searchTypeSelector > p {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.app__imagesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  justify-content: space-between;
+  overflow-y: scroll;
+  height: 70vh;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.app__imagesContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.app__imagesContainer > * {
+  margin: 10px;
+}
+
+.app__imagesContainerImage > p {
+  font-size: 18px;
+  color: rgb(176, 176, 176);
+  text-align: center;
+}
+
+.app__imagesContainer > a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.app__imagesContainerLoadingMessage {
+  display: flex;
+  align-items: center;
+  /* margin: 0 auto; */
+  justify-content: center;
+}
+
+.app__imagesContainerLoadingMessage > img {
+  width: 25px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.app__imagesContainerLoadingMessage > p {
+  font-size: 25px;
+}
+
+.app__noSearchImages {
+  color: rgb(181, 181, 181);
+  font-size: 28px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 739px) {
+  .app__imagesContainer {
+    display: flex;
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .app__searchWrapper {
+    max-width: 90vw;
+  }
+
+  .app__title {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .app__title > img {
+    width: 100px;
   }
 }
